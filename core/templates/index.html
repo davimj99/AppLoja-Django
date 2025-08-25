@@ -4,165 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Produtos à Venda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f7fa;
-            color: #333;
-            padding-top: 70px; /* espaço para o header fixo */
-        }
-
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px 30px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 20px 10px;
-            margin-top: 60px;
-        }
-
-        h1 {
-            text-align: center;
-            margin: 40px 0 20px;
-            font-size: 36px;
-            color: #2c3e50;
-        }
-
-        h2 {
-            font-size: 26px;
-            color: #34495e;
-            margin: 40px 20px 20px;
-        }
-
-        .linha-produtos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 0 20px 50px;
-        }
-
-        .produto {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            padding: 20px;
-            width: 260px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .produto:hover {
-            transform: translateY(-5px);
-        }
-
-        .produto img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .produto h3 {
-            font-size: 20px;
-            color: #2c3e50;
-            margin: 10px 0;
-        }
-
-        .produto p {
-            font-size: 14px;
-            flex-grow: 1;
-            color: #555;
-            margin: 10px 0;
-        }
-
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-
-        @media (max-width: 768px) {
-            .produto {
-                width: 90%;
-            }
-        }
-    </style>
-
-    <script>
-        function IPHONE(modelo, valor) {
-            alert("Valor do iPhone " + modelo + ": R$" + valor.toFixed(2));
-        }
-
-        function XBOX(modelo, valor) {
-            alert("Valor do Xbox " + modelo + ": R$" + valor.toFixed(2));
-        }
-
-        function Playstation(modelo, valor) {
-            alert("Valor do Playstation " + modelo + ": R$" + valor.toFixed(2));
-        }
-    </script>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- Cabeçalho -->
     <header>
-        <h1>Minha Loja de Tecnologia</h1>
+        <h1> 💻 Minha Loja de Tecnologia 💻 </h1>
     </header>
 
     <!-- Conteúdo principal -->
     <h1>Produtos à Venda</h1>
 
-    <!-- iPhone -->
+    <!-- Apple -->
     <h2>Apple</h2>
     <div class="linha-produtos">
         <div class="produto">
             <h3>Iphone X</h3>
-            <img src="{% static 'images/iphone.jpg' %}" alt="Iphone X" />
+            <img src="{% static 'images/iphone.jpg' %}" alt="Iphone X">
             <p>Descubra a revolução da Apple! O iPhone X traz tela OLED de ponta a ponta, reconhecimento facial com Face ID e design moderno sem botão Home.</p>
             <button onclick="IPHONE('X', 1500.00)">Conferir valor</button>
         </div>
 
         <div class="produto">
             <h3>Iphone 14</h3>
-            <img src="{% static 'images/iphone14.jpg' %}" alt="Iphone 14" />
+            <img src="{% static 'images/iphone14.jpg' %}" alt="Iphone 14">
             <p>O iPhone 14 eleva o desempenho com A15 Bionic, câmeras avançadas e novo design resistente.</p>
             <button onclick="IPHONE('14', 2000.00)">Conferir valor</button>
         </div>
 
         <div class="produto">
             <h3>Iphone 15</h3>
-            <img src="{% static 'images/iphone15.jpg' %}" alt="Iphone 15" />
+            <img src="{% static 'images/iphone15.jpg' %}" alt="Iphone 15">
             <p>O novo iPhone 15 traz Dynamic Island, câmera de 48MP e carregamento USB-C.</p>
             <button onclick="IPHONE('15', 3500.00)">Conferir valor</button>
         </div>
@@ -173,14 +48,14 @@
     <div class="linha-produtos">
         <div class="produto">
             <h3>Xbox One</h3>
-            <img src="{% static 'images/xbox.jpg' %}" alt="Xbox One" />
+            <img src="{% static 'images/xbox.jpg' %}" alt="Xbox One">
             <p>Diversão garantida com o Xbox One! Curta seus jogos favoritos em mídia física ou digital, aproveite recursos de streaming e conecte-se com amigos online.</p>
             <button onclick="XBOX('One', 700.00)">Conferir valor</button>
         </div>
 
         <div class="produto">
             <h3>Xbox Series S</h3>
-            <img src="{% static 'images/xboxSeriesS.jpg' %}" alt="Xbox Series S" />
+            <img src="{% static 'images/xboxSeriesS.jpg' %}" alt="Xbox Series S">
             <p>Potência compacta! O Xbox Series S oferece carregamento ultrarrápido e desempenho de última geração com design minimalista.</p>
             <button onclick="XBOX('Series S', 2000.00)">Conferir valor</button>
         </div>
@@ -191,21 +66,21 @@
     <div class="linha-produtos">
         <div class="produto">
             <h3>Playstation 4</h3>
-            <img src="{% static 'images/Playstation4.jpg' %}" alt="Playstation 4" />
+            <img src="{% static 'images/Playstation4.jpg' %}" alt="Playstation 4">
             <p>Desfrute dos melhores jogos com o PS4. Experiência fluida com gráficos incríveis.</p>
             <button onclick="Playstation('4', 2700.00)">Conferir valor</button>
         </div>
 
         <div class="produto">
             <h3>Playstation 5</h3>
-            <img src="{% static 'images/play5.jpg' %}" alt="Playstation 5" />
+            <img src="{% static 'images/play5.jpg' %}" alt="Playstation 5">
             <p>Nova geração! SSD ultrarrápido e DualSense com feedback háptico e gatilhos adaptáveis.</p>
             <button onclick="Playstation('5', 4500.00)">Conferir valor</button>
         </div>
 
         <div class="produto">
             <h3>Playstation 6</h3>
-            <img src="{% static 'images/play6.jpg' %}" alt="Playstation 6" />
+            <img src="{% static 'images/play6.jpg' %}" alt="Playstation 6">
             <p>Console futurista com suporte a jogos em 8K e realidade aumentada (ficção).</p>
             <button onclick="Playstation('6', 10000.00)">Conferir valor</button>
         </div>
@@ -213,8 +88,8 @@
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2025 Minha Loja de Tecnologia. Todos os direitos reservados. | <a href="#" style="color: #ecf0f1; text-decoration: underline;">Contato</a></p>
+        <p>&copy; 2025 Minha Loja de Tecnologia. Todos os direitos reservados. | <a href="#">Contato</a></p>
     </footer>
-
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
