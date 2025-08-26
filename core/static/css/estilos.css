@@ -43,8 +43,8 @@ body::before {
 
 /* Vídeo centralizado e menor */
 .video-header {
-    width: 50%;
-    max-width: 500px;
+    width: 70%;
+    max-width: 700px;
     height: auto;
     border-radius: 20px;
     box-shadow: 
@@ -82,7 +82,6 @@ body > h1 {
     margin: 2rem 0;
     animation: gradientShift 3s ease-in-out infinite, fadeInDown 1s ease-out;
 }
-
 /* Cabeçalho */
 header {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
@@ -236,12 +235,14 @@ h2::after {
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(255, 0, 150, 0.05));
     padding: 1.5rem;
     border: 1px solid rgba(0, 255, 255, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .produto:hover img {
     transform: scale(1.08) rotateY(5deg);
     box-shadow: 0 15px 35px rgba(0, 255, 255, 0.2);
     border-color: rgba(0, 255, 255, 0.3);
+    transform: scale(1.1);
 }
 
 /* Descrições dos produtos */
@@ -251,6 +252,13 @@ h2::after {
     line-height: 1.7;
     margin-bottom: 2rem;
     text-align: justify;
+}
+
+/* Container dos botões */
+.produto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* espaçamento uniforme entre todos os botões */
 }
 
 /* Botões */
@@ -276,6 +284,7 @@ h2::after {
         inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+/* Efeito de “ripple” no hover */
 .produto button::before {
     content: '';
     position: absolute;
@@ -294,6 +303,7 @@ h2::after {
     height: 300px;
 }
 
+/* Hover geral do botão */
 .produto button:hover {
     transform: translateY(-3px);
     box-shadow: 
@@ -302,8 +312,16 @@ h2::after {
     animation-duration: 1s;
 }
 
+/* Clique/ativo */
 .produto button:active {
     transform: translateY(-1px);
+}
+
+/* Animação do gradiente */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Rodapé */
@@ -510,4 +528,126 @@ footer a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #ff0095, #00ff7f);
+}
+
+
+/* Botão do carrinho e voltar */
+.carrinho-container button,
+.btn-voltar {
+    background-color: #ff00bf;   /* cor principal */
+    color: #fff;                 /* texto branco */
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;       /* remove underline do link */
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.carrinho-container button:hover,
+.btn-voltar:hover {
+    background-color: #5e02f1;
+    transform: scale(1.05);
+}
+
+/* Botão Voltar como link */
+.btn-voltar {
+    margin-bottom: 20px;
+}
+
+
+/* Botão flutuante do carrinho */
+.carrinho-final {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff00b3;      /* cor principal da loja */
+    color: #fff;                     /* texto branco */
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Link dentro do botão */
+.carrinho-final a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+/* Efeito ao passar o mouse */
+.carrinho-final:hover {
+    background-color: #7103ee;
+    transform: scale(1.05);
+}
+
+.produto {
+    color: #fff; /* branco */
+    font-weight: bold; /* deixa mais chamativo */
+    font-size: 1.1rem; /* aumenta tamanho */
+}
+.produto-preco {
+    color: #ffdd00; /* cor vibrante para preço */
+    font-weight: bold;
+}
+
+/* Menu lateral fixo */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    background: #111;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.4);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.menu-lateral h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #00ffff;
+}
+
+.menu-lateral ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-lateral ul li {
+    margin: 15px 0;
+}
+
+.menu-lateral ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.menu-lateral ul li a:hover {
+    background: #00ffff;
+    color: #000;
+}
+
+/* Ajuste do corpo para não ficar escondido */
+body {
+    margin-left: 240px; /* espaço para o menu */
 }

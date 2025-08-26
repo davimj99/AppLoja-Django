@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Carrinho</title>
+    <!-- Usando seu CSS principal -->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+
+    <!-- Menu lateral -->
+    <nav class="menu-lateral">
+        <h2>Resumo do Carrinho</h2>
+        <ul id="resumo-itens">
+            <!-- Itens do carrinho via JS -->
+        </ul>
+        <p id="resumo-total">Total: R$0,00</p>
+
+        <h3>Formas de Pagamento</h3>
+        <ul>
+            <li>Cartão de Crédito</li>
+            <li>Pix</li>
+            <li>Boleto Bancário</li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="conteudo-carrinho">
+        <header>
+            <h1>🛒 Meu Carrinho de Compras 🛒</h1>
+            <a href="{% url 'index' %}" class="btn-voltar">← Voltar para produtos</a>
+        </header>
+
+        <section class="carrinho-container">
+            <ul id="itens-carrinho"></ul>
+            <p id="total">Total: R$0,00</p>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </section>
+    </div>
+
+    <script src="{% static 'js/carrinho.js' %}"></script>
+</body>
+</html>

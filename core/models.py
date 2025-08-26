@@ -9,6 +9,7 @@ class Produto(models.Model):
         ('xbox', 'Xbox'),
         ('playstation', 'Playstation'),
         ('relogio', 'Relogios'),
+        ('macbook', 'Macbook'),
         ('outros', 'Outros'),
     ]
 
@@ -17,6 +18,7 @@ class Produto(models.Model):
     estoque = models.IntegerField('Quantidade em Estoque')
     imagem = models.ImageField('Imagem do Produto', upload_to='produtos/', null=True, blank=True)
     categoria = models.CharField('Categoria', max_length=20, choices=CATEGORIAS, default='outros')
+    descricao = models.TextField('Descrição', null=True, blank=True)
 
     def __str__(self):
         return self.nome
