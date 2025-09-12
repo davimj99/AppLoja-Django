@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <!-- Força favicon em diferentes navegadores -->
+    <link rel="icon" type="image/png" href="{% static 'icons/icons_logo.png' %}">
+    <link rel="shortcut icon" href="{% static 'icons/icons_logo.png' %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name" style="color: red; background: yellow">
+    TESTE - Se você vê isso, o base_site.html funcionou
+</h1>
+{% endblock %}
