@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import Produto, Carrinho, ItemCarrinho
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 # Página inicial
 def index(request):
@@ -71,3 +72,39 @@ def checkout(request):
         carrinho.delete()
         return render(request, "checkout_sucesso.html")
     return render(request, "checkout.html", {"carrinho": carrinho})
+
+@staff_member_required
+def admin_dashboard(request):
+    # Cards principais
+    produtos_count = Produto.objects.count()
+    categorias_count = Categoria.objects.count()
+    pedidos_count = Pedido.objects.count()
+    clientes_count = User.objects.count()
+
+    # Alertas: produtos com estoque baixo
+    produtos_estoque_baixo = Produto.objects.filter(estoque__lte=5)
+
+    # Gráfico de vendas por categoria
+    categorias_labels = []
+    categorias_valores = []
+    for cat in Categoria.objects.all():
+        count = Produto.objects.filter(categoria=cat).count()
+        categorias_labels.append(cat.nome)
+        categorias_valores.append(count)
+
+    # Gráfico de pedidos por mês (exemplo)
+    pedidos_meses_labels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun']
+    pedidos_meses_valores = [Pedido.objects.filter(data__month=i+1).count() for i in range(6)]
+
+    context = {
+        'produtos_count': produtos_count,
+        'categorias_count': categorias_count,
+        'pedidos_count': pedidos_count,
+        'clientes_count': clientes_count,
+        'produtos_estoque_baixo': produtos_estoque_baixo,
+        'categorias_labels': categorias_labels,
+        'categorias_valores': categorias_valores,
+        'pedidos_meses_labels': pedidos_meses_labels,
+        'pedidos_meses_valores': pedidos_meses_valores,
+    }
+    return render(request, 'admin/base_site.html', context)

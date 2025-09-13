@@ -1,0 +1,113 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <link rel="icon" type="image/png" href="{% static 'icons/icons_logo.png' %}">
+    <link rel="shortcut icon" href="{% static 'icons/icons_logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_custom.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block branding %}
+<div id="custom-branding">
+    <img src="{% static 'icons/icons_logo.png' %}" alt="Logo TechNova" class="admin-logo">
+    <h1>TechNova Admin</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+
+<div id="dashboard">
+    <h2>📊 Painel TechNova</h2>
+
+    <!-- Cards -->
+    <div class="cards">
+        <div class="card">
+            <h3>Produtos</h3>
+            <p>{{ produtos_count }}</p>
+        </div>
+        <div class="card">
+            <h3>Categorias</h3>
+            <p>{{ categorias_count }}</p>
+        </div>
+        <div class="card">
+            <h3>Pedidos</h3>
+            <p>{{ pedidos_count }}</p>
+        </div>
+        <div class="card">
+            <h3>Clientes</h3>
+            <p>{{ clientes_count }}</p>
+        </div>
+    </div>
+
+    <!-- Alertas de estoque baixo -->
+    {% if produtos_estoque_baixo %}
+    <div class="alertas">
+        <h3>⚠️ Estoque baixo</h3>
+        <ul>
+        {% for produto in produtos_estoque_baixo %}
+            <li>{{ produto.nome }} - {{ produto.estoque }} unidades restantes</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Gráficos -->
+    <div class="charts">
+        <canvas id="chart-vendas-categorias" width="400" height="200"></canvas>
+        <canvas id="chart-pedidos-mes" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Atalhos rápidos -->
+    <div class="shortcuts">
+        <a href="{% url 'admin:app_produto_changelist' %}" class="shortcut">📦 Gerenciar Produtos</a>
+        <a href="{% url 'admin:app_categoria_changelist' %}" class="shortcut">🏷️ Gerenciar Categorias</a>
+        <a href="{% url 'admin:app_pedido_changelist' %}" class="shortcut">🛒 Gerenciar Pedidos</a>
+        <a href="{% url 'admin:auth_user_changelist' %}" class="shortcut">👥 Gerenciar Usuários</a>
+    </div>
+</div>
+
+<script>
+const ctxCat = document.getElementById('chart-vendas-categorias').getContext('2d');
+new Chart(ctxCat, {
+    type: 'bar',
+    data: {
+        labels: {{ categorias_labels|safe }},
+        datasets: [{
+            label: 'Produtos por Categoria',
+            data: {{ categorias_valores|safe }},
+            backgroundColor: 'rgba(0, 119, 204, 0.7)',
+            borderColor: 'rgba(0, 119, 204, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } } }
+});
+
+const ctxMes = document.getElementById('chart-pedidos-mes').getContext('2d');
+new Chart(ctxMes, {
+    type: 'line',
+    data: {
+        labels: {{ pedidos_meses_labels|safe }},
+        datasets: [{
+            label: 'Pedidos Mensais',
+            data: {{ pedidos_meses_valores|safe }},
+            backgroundColor: 'rgba(255, 193, 7, 0.2)',
+            borderColor: 'rgba(255, 193, 7, 1)',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.3
+        }]
+    },
+    options: { responsive: true }
+});
+</script>
+{% endblock %}
+
+{% block footer %}
+<div id="custom-footer">
+    &copy; 2025 TechNova | Contato: contato@technova.com
+</div>
+{% endblock %}

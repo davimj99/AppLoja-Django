@@ -1,0 +1,108 @@
+/* ----------------------- */
+/* Fonte e cores gerais     */
+/* ----------------------- */
+body, h1, h2, h3, label, table {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* ----------------------- */
+/* Cabeçalho Admin          */
+/* ----------------------- */
+#header {
+    background-color: #0077cc;
+    color: #fff;
+}
+
+#custom-branding {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* ----------------------- */
+/* Dashboard Cards          */
+/* ----------------------- */
+#dashboard {
+    margin: 20px 0;
+}
+
+.cards {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 150px;
+    background-color: #0077cc;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ----------------------- */
+/* Charts                  */
+/* ----------------------- */
+.charts {
+    margin-top: 30px;
+}
+
+/* ----------------------- */
+/* Atalhos                  */
+/* ----------------------- */
+.shortcuts {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.shortcut {
+    flex: 1 1 180px;
+    background-color: #005fa3;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.shortcut:hover {
+    background-color: #004a82;
+}
+
+/* ----------------------- */
+/* Footer customizado       */
+/* ----------------------- */
+#custom-footer {
+    background-color: #f4f4f4;
+    color: #666;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px 0;
+}
+
+/* ----------------------- */
+/* Responsividade           */
+/* ----------------------- */
+@media (max-width: 768px) {
+    .cards, .shortcuts {
+        flex-direction: column;
+    }
+}
