@@ -13,6 +13,7 @@ class Produto(models.Model):
         ('relogio', 'Relógios'),
         ('macbook', 'Macbook'),
         ('fones', 'Fones'),
+        ('gamer', 'Gamer'),
         ('outros', 'Outros'),
     ]
 
