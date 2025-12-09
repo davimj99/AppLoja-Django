@@ -1,11 +1,41 @@
-🚀 Estou trabalhando em um projeto pessoal de e-commerce em Django, que ainda está em andamento, e estou muito animado com o progresso! O objetivo é criar uma plataforma robusta, escalável e fácil de manter, seguindo boas práticas de arquitetura de software. A aplicação tem uma estrutura modular, organizada, que separa claramente o backend, frontend e serviços auxiliares, tornando o código mais limpo e eficiente.
+### ERP Django –> Plataforma Escalável e Modular
 
-No backend, estou usando Django 5.2.3 junto com PostgreSQL 17, configurado para garantir alta performance e consultas rápidas, mesmo com grandes volumes de dados. O banco de dados conta com otimizações de joins, índices e processamento paralelo, tudo pensado para deixar a aplicação mais ágil e confiável.
+Este é um projeto pessoal de e-commerce desenvolvido com Django, projetado para ser modular, escalável e fácil de manter, seguindo boas práticas de arquitetura, segurança e organização de código.
+O objetivo é construir uma plataforma robusta, com backend otimizado, frontend responsivo e integrações modernas para atender diferentes cenários reais de uso.
 
-No frontend, os templates são responsivos e reutilizáveis, e os assets em CSS e JavaScript estão otimizados para garantir que a experiência seja fluida tanto no desktop quanto no mobile. O painel administrativo está sendo customizado para gerenciar produtos, categorias e pedidos de forma prática, enquanto a segurança é reforçada com autenticação robusta, middleware ativo e configurações específicas para cada ambiente.
+### 🚀 Visão Geral do Projeto
+➸ A aplicação foi desenvolvida com foco em: ⤶
+⤅ Arquitetura limpa e modular <br>
+⤅ Separação clara entre backend, frontend e serviços auxiliares <br>
+⤅ Escalabilidade, permitindo crescimento sem perder performance <br>
+⤅ Manutenibilidade, com códigos reutilizáveis e padronizados <br>
+⤅ Segurança reforçada, com autenticação e middlewares essenciais <br>
+O projeto está em desenvolvimento, mas já possui uma base sólida para evoluções futuras.
 
-💡 E tem mais por vir! Futuramente, vou adicionar integrações e funcionalidades avançadas, como APIs RESTful documentadas com Swagger, webhooks para notificações em tempo real, integração com ERP/CRM via APIs, autenticação via JWT e Celery para tarefas assíncronas, como envio de emails e relatórios automáticos.
+### 🧱 Tecnologias Utilizadas
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![CSS](https://img.shields.io/badge/css-%23663399.svg?style=for-the-badge&logo=css&logoColor=white)
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) 🔁
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Meu objetivo é criar uma plataforma de e-commerce eficiente, segura e escalável, com uma arquitetura sólida, pronta para crescer e oferecer uma experiência incrível aos usuários.
+### 📦 Funcionalidades Principais (atual)
+➦ Gerenciamento de produtos <br>
+➦ Categorias <br>
+➦ Controle de estoque <br>
+➦ Sistema de pedidos <br>
+➦ Dashboards <br>
+➦ Estrutura pronta para escalabilidade <br>
+➦ Autenticação de usuários <br>
+➦ Organização modular da aplicação <br>
 
+### Roadmap de Funcionalidades
+#### Integrações externas
+ERP <br>
+CRM <br>
+Gateways de pagamento <br>
 
+# 🔧 Arquitetura da Aplicação
+![alt text](image.png)
