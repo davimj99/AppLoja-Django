@@ -1,11 +1,10 @@
+# Ambiente virtual
+venv/
+
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Arquivos temporários
-*.*~
-*.__pycache__*
 
 # Django
 db.sqlite3
@@ -16,12 +15,10 @@ db.sqlite3
 .idea/
 .vscode/
 
-# MacOS
+# Sistema
 .DS_Store
 
-# Logs e arquivos temporários
+# Logs
 *.log
 *.pot
-*.pyc
-*.pyo
 *.swp
