@@ -51,7 +51,7 @@ Cada app é responsável por uma funcionalidade específica do sistema, garantin
 - **clientes** → cadastro e gestão de usuários/clientes  
 - **pagamentos** → processamento e controle de pagamentos  
 - **estoque** → controle de disponibilidade de produtos  
-- **backend (core)** → configurações gerais do projeto (settings, urls, wsgi)
+- **backend** → configurações gerais do projeto (settings, urls, wsgi)
 
 Essa organização permite que o sistema cresça de forma estruturada, facilitando a adição de novas funcionalidades sem impactar o restante da aplicação.
 
