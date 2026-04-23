@@ -20,7 +20,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
+
+    'produtos',
+    'clientes',
+    'pedidos',
+    'pagamentos',
+    'estoque',
+    'carrinho',
 ]
 
 MIDDLEWARE = [
@@ -34,7 +40,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'django1_udemy.urls'
+ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
@@ -52,7 +58,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django1_udemy.wsgi.application'
+WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 DATABASES = {
