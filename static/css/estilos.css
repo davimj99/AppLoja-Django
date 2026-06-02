@@ -7,19 +7,19 @@
 
 /* ── VARIÁVEIS ─────────────────────────────────────────────── */
 :root {
-  --clr-bg:        #0a0c10;
-  --clr-surface:   #0e1118;
+  --clr-bg:        #fcf6f6;
+  --clr-surface:   #141414;
   --clr-card:      #161b27;
-  --clr-border:    rgba(255,255,255,.07);
+  --clr-border:    #17b9f9;
   --clr-accent:    #00e5ff;
-  --clr-accent2:   #7c3aed;
+  --clr-accent2:   #3ac9ed;  /* letras container produtos*/
   --clr-text:      #e2e8f0;
-  --clr-muted:     #4a5568;
-  --clr-muted2:    #718096;
+  --clr-muted:     #17b9f9; /*Letras titulos footer */
+  --clr-muted2:    #ffffff;
   --radius:        14px;
   --radius-sm:     8px;
   --radius-xs:     5px;
-  --shadow-card:   0 4px 32px rgba(0,0,0,.55);
+  --shadow-card:   0 4px 32px rgba(5, 191, 243, 0.55);
   --transition:    .22s cubic-bezier(.4,0,.2,1);
   --navbar-h:      64px;
   --sidebar-w:     200px;
@@ -94,7 +94,7 @@ body {
   font-family: 'Orbitron', monospace;
   font-size: 1.8rem;
   font-weight: 900;
-  color: #fff;
+  color: #f70606;
   letter-spacing: .04em;
   margin-bottom: 36px;
   display: inline-block;
@@ -214,7 +214,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(0,0,0,.65);
+  background: rgba(247, 245, 245, 0.65);
   backdrop-filter: blur(6px);
   align-items: center;
   justify-content: center;
@@ -229,7 +229,7 @@ body {
   max-width: 440px;
   width: 90%;
   position: relative;
-  box-shadow: 0 24px 64px rgba(0,0,0,.7);
+  box-shadow: 0 24px 64px rgba(241, 2, 2, 0.7);
   animation: modalIn .22s ease;
 }
 @keyframes modalIn {
