@@ -32,3 +32,7 @@ class Fornecedor(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    class Meta:   #Sempre fazer para classes cuja o nome do plural fica errado
+        verbose_name = "Fornecedor"
+        verbose_name_plural = "Fornecedores"
