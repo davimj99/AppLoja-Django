@@ -1,0 +1,183 @@
+/* ================================
+   GRID DE PRODUTOS (LOJA PRO)
+================================ */
+
+.linha-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* ================================
+   CARD DO PRODUTO
+================================ */
+
+.produto {
+  background: var(--clr-card);
+  border: 1px solid rgba(23, 185, 249, 0.25);
+  border-radius: 16px;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+/* efeito de brilho topo */
+.produto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--clr-accent), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.produto:hover {
+  transform: translateY(-7px);
+  border-color: var(--clr-accent);
+  box-shadow: 0 15px 40px rgba(0, 229, 255, 0.18);
+}
+
+.produto:hover::before {
+  opacity: 1;
+}
+
+/* ================================
+   BADGES (NOVO / PROMOÇÃO)
+================================ */
+
+.produto-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff0033;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.produto-badge.novo {
+  background: #00e5ff;
+  color: #000;
+}
+
+/* ================================
+   IMAGEM
+================================ */
+
+.produto img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.produto:hover img {
+  transform: scale(1.05);
+}
+
+/* ================================
+   TEXTO
+================================ */
+
+.produto h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.produto p {
+  font-size: 0.8rem;
+  color: var(--clr-text);
+  opacity: 0.8;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* ================================
+   PREÇO (LOJA STYLE)
+================================ */
+
+.produto-preco {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #00e5ff;
+}
+
+.produto-preco-antigo {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+/* ================================
+   BOTÕES
+================================ */
+
+.produto button {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.25s ease;
+}
+
+/* ver preço */
+.produto button:first-of-type {
+  background: transparent;
+  border: 1px solid var(--clr-accent);
+  color: var(--clr-accent);
+}
+
+.produto button:first-of-type:hover {
+  background: rgba(0, 229, 255, 0.1);
+  transform: scale(1.03);
+}
+
+/* adicionar carrinho */
+.produto button:last-of-type {
+  background: linear-gradient(135deg, var(--clr-accent), #2563eb);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.25);
+}
+
+.produto button:last-of-type:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.35);
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 768px) {
+  .linha-produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .linha-produtos {
+    grid-template-columns: 1fr;
+  }
+}

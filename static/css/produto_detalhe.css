@@ -1,0 +1,131 @@
+/* ================================
+   PRODUTO DETALHE - NIVEL LOJA PRO
+   ================================ */
+
+.produto-detalhe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: start;
+  padding: 20px;
+}
+
+/* ===== GALERIA ===== */
+.galeria-produto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* imagem principal */
+.galeria-principal img {
+  width: 100%;
+  height: 460px;
+  object-fit: contain;
+  background: #161b27;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-principal img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 229, 255, 0.15);
+}
+
+/* thumbnails */
+.galeria-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 2px;
+  scrollbar-width: thin;
+}
+
+.galeria-thumbs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.galeria-thumbs img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.25s ease;
+  background: #141414;
+  flex-shrink: 0;
+}
+
+.galeria-thumbs img:hover {
+  transform: scale(1.08);
+  border-color: #00e5ff;
+}
+
+/* ===== INFO PRODUTO ===== */
+.produto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.produto-info h1 {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  color: #f70606;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.produto-info p {
+  color: #e2e8f0;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.produto-info .preco {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #00e5ff;
+  margin: 15px 0;
+}
+
+/* ===== BOTÕES ===== */
+.btn-carrinho {
+  background: linear-gradient(135deg, #00e5ff, #4f46e5);
+  border: none;
+  padding: 14px 20px;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  width: 100%;
+}
+
+.btn-carrinho:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 229, 255, 0.25);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .produto-detalhe {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .galeria-principal img {
+    height: 320px;
+  }
+
+  .produto-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .produto-info .preco {
+    font-size: 2rem;
+  }
+}

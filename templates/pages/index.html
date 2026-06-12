@@ -33,15 +33,22 @@ TechNova
                      data-nome="{{ produto.nome|lower }}"
                      data-categoria="{{ nome_categoria|lower }}">
 
-                    <h3>{{ produto.nome }}</h3>
+                    <!-- Área clicável do produto -->
+                    <a href="{% url 'produto_detail' produto.id %}"
+                       class="produto-link">
 
-                    {% if produto.imagem %}
-                        <img src="{{ produto.imagem.url }}"
-                             alt="{{ produto.nome }}">
-                    {% endif %}
+                        <h3>{{ produto.nome }}</h3>
 
-                    <p>{{ produto.descricao }}</p>
+                        {% if produto.imagem %}
+                            <img src="{{ produto.imagem.url }}"
+                                 alt="{{ produto.nome }}">
+                        {% endif %}
 
+                        <p>{{ produto.descricao }}</p>
+
+                    </a>
+
+                    <!-- Botões -->
                     <button onclick="mostrarValor('{{ produto.nome }}', {{ produto.preco }})">
                         Ver preço 💰
                     </button>
@@ -57,7 +64,9 @@ TechNova
             </div>
 
         {% else %}
+
             <p>Nenhum produto nesta categoria.</p>
+
         {% endif %}
 
     {% endfor %}

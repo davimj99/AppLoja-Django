@@ -5,6 +5,10 @@
 {{ produto.nome }} | TechNova
 {% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/produto.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <div class="container py-5">

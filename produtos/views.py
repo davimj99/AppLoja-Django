@@ -21,3 +21,9 @@ def index(request):
 def produto_detail(request, pk):
     produto = get_object_or_404(Produto, id=pk)
     return render(request, 'pages/produto.html', {'produto': produto})
+
+def produto_detail(request, pk):
+    produto = Produto.objects.get(id=pk)
+    return render(request, 'pages/produto_detail.html', {
+        'produto': produto
+    })

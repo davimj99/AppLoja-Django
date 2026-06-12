@@ -26,6 +26,7 @@
 
     <!-- CSS Global -->
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/produto.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
@@ -49,7 +50,7 @@
                     {% include 'includes/sidebar.html' %}
                 {% endblock %}
 
-            <main class="conteudo col py-4">
+            <main class="conteudo py-4">
                 {% block content %}
                 {% endblock %}
 

@@ -1,0 +1,67 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+{{ produto.nome }} | TechNova
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/produto_detalhe.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5 produto-detalhe">
+
+    <!-- IMAGEM -->
+    <div class="galeria-produto">
+
+        {% if produto.imagem %}
+            <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+        {% else %}
+            <img src="{% static 'img/sem-imagem.png' %}" alt="Sem imagem">
+        {% endif %}
+
+    </div>
+
+    <!-- INFO -->
+    <div class="produto-info">
+
+        <h1>{{ produto.nome }}</h1>
+
+        <p class="lead">
+            {{ produto.descricao }}
+        </p>
+
+        <h3 class="preco">
+            R$ {{ produto.preco }}
+        </h3>
+
+        <p>
+            <strong>Estoque:</strong>
+
+            {% if produto.estoque > 0 %}
+                <span style="color:#00e676">
+                    {{ produto.estoque }} unidades
+                </span>
+            {% else %}
+                <span style="color:red">
+                    Indisponível
+                </span>
+            {% endif %}
+        </p>
+
+        <button class="btn-carrinho"
+                onclick="adicionarAoCarrinho('{{ produto.nome }}', {{ produto.preco }})">
+            🛒 Adicionar ao Carrinho
+        </button>
+
+        <a href="{% url 'index' %}" class="btn btn-outline-primary">
+            ← Voltar
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
