@@ -1,0 +1,82 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+TechNova
+{% endblock %}
+
+{% block content %}
+
+<section class="video-inicial">
+    <video autoplay muted loop>
+        <source src="{% static 'videos/videotech.mp4' %}" type="video/mp4">
+    </video>
+</section>
+
+<h1>Bem-vindo à TechNova 🚀</h1>
+
+{% if categorias %}
+
+    {% for nome_categoria, produtos_categoria in categorias.items %}
+
+        <h2 id="{{ nome_categoria|slugify }}">
+            {{ nome_categoria|capfirst }}
+        </h2>
+
+        {% if produtos_categoria %}
+
+            <div class="linha-produtos">
+
+                {% for produto in produtos_categoria %}
+
+                <div class="produto"
+                     data-nome="{{ produto.nome|lower }}"
+                     data-categoria="{{ nome_categoria|lower }}">
+
+                    <h3>{{ produto.nome }}</h3>
+
+                    {% if produto.imagem %}
+                        <img src="{{ produto.imagem.url }}"
+                             alt="{{ produto.nome }}">
+                    {% endif %}
+
+                    <p>{{ produto.descricao }}</p>
+
+                    <button onclick="mostrarValor('{{ produto.nome }}', {{ produto.preco }})">
+                        Ver preço 💰
+                    </button>
+
+                    <button onclick="adicionarAoCarrinho('{{ produto.nome }}', {{ produto.preco }})">
+                        Adicionar 🛒
+                    </button>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% else %}
+            <p>Nenhum produto nesta categoria.</p>
+        {% endif %}
+
+    {% endfor %}
+
+{% else %}
+
+    <p>Sem produtos cadastrados.</p>
+
+{% endif %}
+
+{% endblock %}
+
+{% block modals %}
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span id="fechar">&times;</span>
+        <p id="mensagem"></p>
+    </div>
+</div>
+
+{% endblock %}

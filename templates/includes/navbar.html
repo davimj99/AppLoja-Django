@@ -1,0 +1,32 @@
+<header class="navbar">
+    <h1>💻 TechNova</h1>
+
+    <div class="nav-actions">
+
+        <div class="nav-search-wrap">
+            <span class="nav-search-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2.2"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+            </span>
+
+            <input type="text"
+                   id="busca-navbar"
+                   placeholder="Buscar produtos..."
+                   autocomplete="off">
+
+            <div class="nav-search-dropdown" id="searchDropdown"></div>
+        </div>
+
+        <a href="{% url 'carrinho' %}" class="btn-carrinho">
+            Carrinho
+            <span class="carrinho-badge" id="carrinhoBadge">0</span>
+        </a>
+
+        <button id="toggleSidebar">☰</button>
+
+    </div>
+</header>

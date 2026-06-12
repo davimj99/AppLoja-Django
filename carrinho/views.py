@@ -6,8 +6,7 @@ from .models import Carrinho, ItemCarrinho
 @login_required
 def ver_carrinho(request):
     carrinho, _ = Carrinho.objects.get_or_create(usuario=request.user)
-    return render(request, "carrinho.html", {"carrinho": carrinho})
-
+    return render(request, "pages/carrinho.html", {"carrinho": carrinho})
 
 @login_required
 def adicionar_ao_carrinho(request, produto_id):

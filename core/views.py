@@ -16,7 +16,7 @@ def home(request):
 
         categorias[categoria].append(produto)
 
-    return render(request, 'index.html', {'categorias': categorias})
+    return render(request, 'pages/index.html', {'categorias': categorias})
 
 def error404(request, exception):
     template = loader.get_template('404.html')
@@ -28,4 +28,4 @@ def error500(request):
     return HttpResponse(template.render({}, request), status=500)
 
 def contato(request):
-    return render(request, 'contato.html')
+    return render(request, 'pages/contato.html')

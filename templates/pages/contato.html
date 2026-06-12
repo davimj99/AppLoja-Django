@@ -1,0 +1,175 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}
+Contato | TechNova
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contato.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-info">
+            📞 Entre em Contato
+        </h1>
+
+        <p class="text-muted fs-5">
+            Tire dúvidas, envie sugestões ou solicite suporte.
+            Nossa equipe está pronta para ajudar.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- FORMULÁRIO -->
+        <div class="col-lg-8">
+
+            <div class="card border-0 shadow-lg">
+
+                <div class="card-header bg-info text-dark">
+                    <h4 class="mb-0">
+                        ✉️ Enviar Mensagem
+                    </h4>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    Nome Completo
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       name="nome"
+                                       placeholder="Digite seu nome">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    E-mail
+                                </label>
+
+                                <input type="email"
+                                       class="form-control"
+                                       name="email"
+                                       placeholder="Digite seu e-mail">
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Assunto
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   name="assunto"
+                                   placeholder="Ex: Suporte, Orçamento, Sugestão...">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">
+                                Mensagem
+                            </label>
+
+                            <textarea class="form-control"
+                                      rows="6"
+                                      name="mensagem"
+                                      placeholder="Digite sua mensagem"></textarea>
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-info btn-lg">
+                            🚀 Enviar Mensagem
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- INFORMAÇÕES -->
+        <div class="col-lg-4">
+
+            <div class="card border-0 shadow-lg h-100">
+
+                <div class="card-header bg-dark text-info">
+                    <h4 class="mb-0">
+                        💻 TechNova
+                    </h4>
+                </div>
+
+                <div class="card-body">
+
+                    <p>
+                        Empresa especializada em tecnologia,
+                        inovação e soluções digitais.
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        📧 contato@technova.com.br
+                    </p>
+
+                    <p>
+                        📞 (61) 99999-0000
+                    </p>
+
+                    <p>
+                        📍 Brasília - DF
+                    </p>
+
+                    <p>
+                        🕒 Segunda a Sexta
+                        <br>
+                        09:00 às 18:00
+                    </p>
+
+                    <hr>
+
+                    <div class="d-grid gap-2">
+
+                        <a href="#"
+                           class="btn btn-outline-info">
+                            Instagram
+                        </a>
+
+                        <a href="#"
+                           class="btn btn-outline-info">
+                            Facebook
+                        </a>
+
+                        <a href="#"
+                           class="btn btn-outline-info">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

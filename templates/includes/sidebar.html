@@ -1,0 +1,25 @@
+<aside class="sidebar" id="sidebar">
+
+    <h2>Categorias</h2>
+
+    <input type="text"
+           id="busca"
+           placeholder="Buscar produto...">
+
+    <ul>
+        {% for nome_categoria, produtos_categoria in categorias.items %}
+        <li>
+            <a href="#{{ nome_categoria|slugify }}"
+               class="nav-cat">
+                {{ nome_categoria|capfirst }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="sidebar-footer">
+        Conheça nossos produtos<br>
+        Aqui sua experiência é única
+    </div>
+
+</aside>

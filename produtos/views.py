@@ -15,9 +15,9 @@ def index(request):
         
         categorias[categoria].append(produto)
 
-    return render(request, 'index.html', {'categorias': categorias})
+    return render(request, 'pages/index.html', {'categorias': categorias})
 
 
 def produto_detail(request, pk):
     produto = get_object_or_404(Produto, id=pk)
-    return render(request, 'produto.html', {'produto': produto})
+    return render(request, 'pages/produto.html', {'produto': produto})
